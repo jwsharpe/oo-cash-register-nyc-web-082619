@@ -14,9 +14,14 @@ class CashRegister
     @total += price*quantity
     add_to_items(item, quantity)
     add_to_item_collection(item, price)
-
   end
   
+  def add_to_item_collection(item, price)
+    if(!item_collection.include?(item))
+      @item_collection[item] = price
+    end
+  end
+      
   def add_to_items(item, quantity)
     (1..quantity).each do
       @items.push(item)
