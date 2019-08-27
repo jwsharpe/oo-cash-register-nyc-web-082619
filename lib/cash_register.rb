@@ -18,7 +18,7 @@ class CashRegister
   end
   
   def add_to_transaction_stack(item, price,quantity)
-    @transaction_stack.push([item,price,quantity])
+    @transaction_stack.push([item, price, quantity])
   end
       
   def add_to_items(item, quantity)
@@ -28,8 +28,9 @@ class CashRegister
   end
   
   def void_last_transaction
-    void_item = @items.pop
-    @total -= @item_collection[void_item]
+    void_transaction = @transaction_stack.pop
+    @items.
+    
   end
   
   def apply_discount
