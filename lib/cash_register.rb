@@ -13,7 +13,7 @@ class CashRegister
   def add_item(item, price, quantity=1)
     @total += price*quantity
     add_to_items(item, quantity)
-        add_to_item_collection
+    add_to_item_collection(item, price)
 
   end
   
