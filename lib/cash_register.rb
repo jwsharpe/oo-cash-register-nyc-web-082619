@@ -7,19 +7,18 @@ class CashRegister
     @total = 0
     @discount = discount
     @items = []
+    @transaction_stack = []
   end
   
   def add_item(item, price, quantity=1)
     @total += price*quantity
     add_to_items(item, quantity)
-    add_to_item_collection(item, price)
+    add_to_transaction_stack(item, price,quantity)
     @items
   end
   
-  def add_to_item_collection(item, price)
-    if(!@item_collection.include?(item))
-      @item_collection[item] = price
-    end
+  def add_to_transaction_stack(item, price,quantity)
+    @transaction_stack.push([item,price,quantity])
   end
       
   def add_to_items(item, quantity)
