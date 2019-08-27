@@ -33,13 +33,11 @@ class CashRegister
     price = void_transaction[1]
     quantity = void_transaction[2]
     
+    
     @total -= price*quantity
     (1..void_transaction[2]).each do
       @items.pop
     end
-    
-    
-    
   end
   
   def apply_discount
