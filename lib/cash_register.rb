@@ -13,7 +13,6 @@ class CashRegister
     @total += price
     @items.push(item)
   end
-  
-  
+
 end
 
