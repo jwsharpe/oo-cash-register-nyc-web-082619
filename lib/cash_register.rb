@@ -7,10 +7,17 @@ class CashRegister
     @total = 0
     @discount = discount
     @items = []
+    @item_collection = {}
   end
   
   def add_item(item, price, quantity=1)
     @total += price*quantity
+    add_to_items(item, quantity)
+        add_to_item_collection
+
+  end
+  
+  def add_to_items(item, quantity)
     (1..quantity).each do
       @items.push(item)
     end
