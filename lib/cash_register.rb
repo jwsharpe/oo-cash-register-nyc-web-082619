@@ -29,7 +29,16 @@ class CashRegister
   
   def void_last_transaction
     void_transaction = @transaction_stack.pop
-    @items.delete(void_transaction[0])
+    item = void_transaction[0]
+    price = void_transaction[1]
+    quantity = void_transaction[2]
+    
+    @total -= price*quantity
+    (1..void_transaction[2]).each do
+      @items.pop
+    end
+    
+    
     
   end
   
