@@ -19,7 +19,7 @@ class CashRegister
   
   def add_to_item_collection(item, price)
     if(!@item_collection.include?(item))
-      @item_collection[item] << price
+      @item_collection[item] = price
     end
   end
       
