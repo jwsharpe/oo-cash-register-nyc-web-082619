@@ -31,7 +31,7 @@ class CashRegister
   
   def void_last_transaction
     void_item = @items.pop
-    @total -= item_collection[void_item]
+    @total = @item_collection[void_item]
   end
   
   def apply_discount
